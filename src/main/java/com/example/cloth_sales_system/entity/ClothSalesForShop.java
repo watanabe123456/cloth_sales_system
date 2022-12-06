@@ -3,10 +3,12 @@ package com.example.cloth_sales_system.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cloth_sales_for_shop")
+@IdClass(value = ClothSalesForShopId.class)
 public class ClothSalesForShop {
 
 	@Id
