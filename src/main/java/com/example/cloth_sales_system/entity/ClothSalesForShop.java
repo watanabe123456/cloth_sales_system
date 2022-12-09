@@ -1,10 +1,14 @@
 package com.example.cloth_sales_system.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
+
+import com.example.cloth_sales_system.vo.ClothSalesReq;
 
 @Entity
 @Table(name = "cloth_sales_for_shop")
@@ -17,10 +21,10 @@ public class ClothSalesForShop {
 
 	@Id
 	@Column(name = "members_number")
-	private Integer membersNumber;
+	private String membersNumber;
 
 	@Column(name = "product_name")
-	private Integer productName;
+	private String productName;
 
 	@Column(name = "product_quantity")
 	private Integer productQuantity;
@@ -29,14 +33,23 @@ public class ClothSalesForShop {
 	private Integer productPrice;
 
 	@Column(name = "purchase_date")
-	private Integer purchaseDate;
+	private Date purchaseDate;
 
 	public ClothSalesForShop() {
 
 	}
+	
+	public ClothSalesForShop(ClothSalesReq req) {
+		this.productNumber = req.getProductNumber();
+		this.membersNumber = req.getMembersNumber();
+		this.productName = req.getProductName();
+		this.productQuantity = req.getProductQuantity();
+		this.productPrice = req.getProductPrice();
+		this.purchaseDate = req.getPurchaseDate();
+	}
 
-	public ClothSalesForShop(Integer productNumber, Integer membersNumber, Integer productName, Integer productQuantity,
-			Integer productPrice, Integer purchaseDate) {
+	public ClothSalesForShop(Integer productNumber, String membersNumber, String productName, Integer productQuantity,
+			Integer productPrice, Date purchaseDate) {
 		this.productNumber = productNumber;
 		this.membersNumber = membersNumber;
 		this.productName = productName;
@@ -53,19 +66,19 @@ public class ClothSalesForShop {
 		this.productNumber = productNumber;
 	}
 
-	public Integer getMembersNumber() {
+	public String getMembersNumber() {
 		return membersNumber;
 	}
 
-	public void setMembersNumber(Integer membersNumber) {
+	public void setMembersNumber(String membersNumber) {
 		this.membersNumber = membersNumber;
 	}
 
-	public Integer getProductName() {
+	public String getProductName() {
 		return productName;
 	}
 
-	public void setProductName(Integer productName) {
+	public void setProductName(String productName) {
 		this.productName = productName;
 	}
 
@@ -85,11 +98,11 @@ public class ClothSalesForShop {
 		this.productPrice = productPrice;
 	}
 
-	public Integer getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(Integer purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 

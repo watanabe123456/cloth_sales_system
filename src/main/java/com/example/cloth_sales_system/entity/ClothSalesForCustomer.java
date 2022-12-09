@@ -10,8 +10,8 @@ import javax.persistence.Table;
 public class ClothSalesForCustomer {
 
 	@Id
-	@Column(name = "member_number")
-	private String memberNumber;
+	@Column(name = "member_id")
+	private String memberId;
 
 	@Column(name = "member_name")
 	private String memberName;
@@ -35,9 +35,9 @@ public class ClothSalesForCustomer {
 
 	}
 
-	public ClothSalesForCustomer(String memberNumber, String memberName, String memberPassword,
-			Integer memberPhoneNumber, String keep, String remind, String bought_item) {
-		this.memberNumber = memberNumber;
+	public ClothSalesForCustomer(String memberId, String memberName, String memberPassword, Integer memberPhoneNumber,
+			String keep, String remind, String bought_item) {
+		this.memberId = memberId;
 		this.memberName = memberName;
 		this.memberPassword = memberPassword;
 		this.memberPhoneNumber = memberPhoneNumber;
@@ -46,12 +46,12 @@ public class ClothSalesForCustomer {
 		this.bought_item = bought_item;
 	}
 
-	public String getMemberNumber() {
-		return memberNumber;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setMemberNumber(String memberNumber) {
-		this.memberNumber = memberNumber;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getMemberName() {
