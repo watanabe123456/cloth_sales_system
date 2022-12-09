@@ -11,7 +11,7 @@ public class ClothSalesForCustomer {
 
 	@Id
 	@Column(name = "member_id")
-	private String memberId;
+	private String membersId;
 
 	@Column(name = "member_name")
 	private String memberName;
@@ -35,9 +35,9 @@ public class ClothSalesForCustomer {
 
 	}
 
-	public ClothSalesForCustomer(String memberId, String memberName, String memberPassword, Integer memberPhoneNumber,
+	public ClothSalesForCustomer(String membersId, String memberName, String memberPassword, Integer memberPhoneNumber,
 			String keep, String remind, String bought_item) {
-		this.memberId = memberId;
+		this.membersId = membersId;
 		this.memberName = memberName;
 		this.memberPassword = memberPassword;
 		this.memberPhoneNumber = memberPhoneNumber;
@@ -46,12 +46,12 @@ public class ClothSalesForCustomer {
 		this.bought_item = bought_item;
 	}
 
-	public String getMemberId() {
-		return memberId;
+	public String getMembersId() {
+		return membersId;
 	}
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setMembersId(String membersId) {
+		this.membersId = membersId;
 	}
 
 	public String getMemberName() {
