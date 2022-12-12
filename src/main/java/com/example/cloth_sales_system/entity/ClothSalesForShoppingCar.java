@@ -11,7 +11,7 @@ public class ClothSalesForShoppingCar {
 
 	@Id
 	@Column(name = "member_id")
-	private String membersId;
+	private String memberId;
 
 	@Column(name = "product_name")
 	private String productName;
@@ -29,21 +29,21 @@ public class ClothSalesForShoppingCar {
 
 	}
 
-	public ClothSalesForShoppingCar(String membersId, String productName, Integer productQuantity, Integer productPrice,
+	public ClothSalesForShoppingCar(String memberId, String productName, Integer productQuantity, Integer productPrice,
 			Integer purchaseQuantity) {
-		this.membersId = membersId;
+		this.memberId = memberId;
 		this.productName = productName;
 		this.productQuantity = productQuantity;
 		this.productPrice = productPrice;
 		this.purchaseQuantity = purchaseQuantity;
 	}
 
-	public String getMembersId() {
-		return membersId;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setMembersId(String membersId) {
-		this.membersId = membersId;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public String getProductName() {

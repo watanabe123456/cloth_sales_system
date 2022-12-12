@@ -15,7 +15,7 @@ public class ClothSalesForShop {
 
 	@Id
 	@Column(name = "product_number")
-	private Integer productNumber;
+	private String productNumber;
 
 	@Column(name = "product_name")
 	private String productName;
@@ -41,7 +41,7 @@ public class ClothSalesForShop {
 		this.purchaseDate = req.getPurchaseDate();
 	}
 
-	public ClothSalesForShop(Integer productNumber, String membersNumber, String productName, Integer productQuantity,
+	public ClothSalesForShop(String productNumber, String membersNumber, String productName, Integer productQuantity,
 			Integer productPrice, Date purchaseDate) {
 		this.productNumber = productNumber;
 		this.productName = productName;
@@ -50,11 +50,11 @@ public class ClothSalesForShop {
 		this.purchaseDate = purchaseDate;
 	}
 
-	public Integer getProductNumber() {
+	public String getProductNumber() {
 		return productNumber;
 	}
 
-	public void setProductNumber(Integer productNumber) {
+	public void setProductNumber(String productNumber) {
 		this.productNumber = productNumber;
 	}
 
