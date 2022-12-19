@@ -5,12 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.example.cloth_sales_system.vo.ClothSalesReq;
+
 @Entity
 @Table(name = "cloth_sales_for_customer")
 public class ClothSalesForCustomer {
 
 	@Id
-	@Column(name = "member_id")
+	@Column(name = "members_id")
 	private String membersId;
 
 	@Column(name = "member_name")
@@ -19,31 +21,36 @@ public class ClothSalesForCustomer {
 	@Column(name = "member_password")
 	private String memberPassword;
 
+	@Column(name = "email")
+	private String email;
+
 	@Column(name = "member_phone_number")
 	private Integer memberPhoneNumber;
 
-	@Column(name = "keep")
-	private String keep;
-
-	@Column(name = "remind")
-	private String remind;
-
 	@Column(name = "bought_item")
-	private String bought_item;
+	private String boughtItem;
 
 	public ClothSalesForCustomer() {
 
 	}
 
-	public ClothSalesForCustomer(String membersId, String memberName, String memberPassword, Integer memberPhoneNumber,
-			String keep, String remind, String bought_item) {
+	public ClothSalesForCustomer(ClothSalesReq req) {
+		this.membersId = req.getMembersId();
+		this.memberName = req.getMemberName();
+		this.memberPassword = req.getMemberPassword();
+		this.email = req.getEmail();
+		this.memberPhoneNumber = req.getMemberPhoneNumber();
+		this.boughtItem = req.getBoughtItem();
+	}
+
+	public ClothSalesForCustomer(String membersId, String memberName, String memberPassword, String email,
+			Integer memberPhoneNumber, String boughtItem) {
 		this.membersId = membersId;
 		this.memberName = memberName;
 		this.memberPassword = memberPassword;
+		this.email = email;
 		this.memberPhoneNumber = memberPhoneNumber;
-		this.keep = keep;
-		this.remind = remind;
-		this.bought_item = bought_item;
+		this.boughtItem = boughtItem;
 	}
 
 	public String getMembersId() {
@@ -70,6 +77,14 @@ public class ClothSalesForCustomer {
 		this.memberPassword = memberPassword;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Integer getMemberPhoneNumber() {
 		return memberPhoneNumber;
 	}
@@ -78,28 +93,12 @@ public class ClothSalesForCustomer {
 		this.memberPhoneNumber = memberPhoneNumber;
 	}
 
-	public String getKeep() {
-		return keep;
+	public String getBoughtItem() {
+		return boughtItem;
 	}
 
-	public void setKeep(String keep) {
-		this.keep = keep;
-	}
-
-	public String getRemind() {
-		return remind;
-	}
-
-	public void setRemind(String remind) {
-		this.remind = remind;
-	}
-
-	public String getBought_item() {
-		return bought_item;
-	}
-
-	public void setBought_item(String bought_item) {
-		this.bought_item = bought_item;
+	public void setBoughtItem(String boughtItem) {
+		this.boughtItem = boughtItem;
 	}
 
 }

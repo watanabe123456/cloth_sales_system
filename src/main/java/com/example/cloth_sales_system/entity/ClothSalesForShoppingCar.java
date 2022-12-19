@@ -24,18 +24,26 @@ public class ClothSalesForShoppingCar {
 
 	@Column(name = "purchase_quantity")
 	private Integer purchaseQuantity;
+	
+	@Column(name = "keep")
+	private String keep;
+
+	@Column(name = "remind")
+	private String remind;
 
 	public ClothSalesForShoppingCar() {
 
 	}
 
 	public ClothSalesForShoppingCar(String memberId, String productName, Integer productQuantity, Integer productPrice,
-			Integer purchaseQuantity) {
+			Integer purchaseQuantity, String keep, String remind) {
 		this.memberId = memberId;
 		this.productName = productName;
 		this.productQuantity = productQuantity;
 		this.productPrice = productPrice;
 		this.purchaseQuantity = purchaseQuantity;
+		this.keep = keep;
+		this.remind = remind;
 	}
 
 	public String getMemberId() {
